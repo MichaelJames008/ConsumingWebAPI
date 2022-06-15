@@ -1,0 +1,50 @@
+﻿
+@model ConsumingWebAPI.Models.Application
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <h2>List of Bodies</h2>
+
+    @if(Model.bodies != null)
+    {
+        <div id="tt">
+            <table id="users" class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>English Name</th>
+                        <th>Average Temp</th>
+                        <th>Discovery Date</th>
+                        <th>Discovered By</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var b in Model.bodies)
+                    {
+
+                    <tr>
+                        <td>@b.id</td>
+                        <td>@b.name</td>
+                        <td>@b.englishName</td>
+                        <td>@b.avgTemp</td>
+                        <td>@b.discoveryDate</td>
+                        <td>@b.discoveredBy</td>
+                    </tr>
+
+                    }
+
+                </tbody>
+
+
+                
+                </table>
+            </div>
+            }
+        </div>
